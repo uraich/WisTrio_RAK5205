@@ -1,0 +1,2470 @@
+Rak5205 GPS demo program
+The Quectel L76 GPS receiver is connected to Rak811 UART 3
+Reads the GPS receiver and parses the NMEA messages
+The GPS timing pulse is connected to Rak811 GPIO PA0
+Stack pointer is at 20007ff0
+fifo buffer allocated at 0x200008a0
+nmea message buffer allocated at 0x20000ca8
+Switching GPS Standby off
+
+$PMTK011,MTKGPS*08
+
+$PMTK010,001*2E
+
+$PMTK011,MTKGPS*08
+
+$PMTK010,002*2D
+
+$GPRMC,133834.198,V,,,,,0.09,0.00,141218,,,N,V*3F
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:38:34 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.090000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.09,N,0.17,K,N*3D
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.090000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.170000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133834.198,,,,,0,0,,,M,,M,,*46
+==================
+Essential Fix Data
+==================
+time: 13:38:34 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of Geodide M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,33,07,55,058,,13,29,277,29,0*60
+=========================
+GPGSV: satellites in view
+=========================
+No of GSV structures is 3
+Memory for the GSV records successfully allocated
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 33
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 29
+
+$GPGSV,3,2,09,09,24,089,19,02,22,234,25,28,20,149,,06,04,197,,0*62
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 19
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 25
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+
+$GPGSV,3,3,09,46,,,,0*6E
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 46
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,,74,54,048,23,72,49,107,23,1*7E
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 23
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 23
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,,73,09,029,,1*7F
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GPGLL,,,,,133834.198,V,N*74
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:38:34 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GNRMC,133835.198,A,4618.7620,N,00606.8092,E,2.00,129.32,141218,,,A,V*08
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:35 UTC
+status: active (A) or void (V):  A
+latitude: 4618.762000
+GPS northOrSouth: N
+longitude: 606.809200
+GPS eastOrWest: E
+speedOverGround: 2.000000
+trackAngle: 129.320000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,129.32,T,,M,2.00,N,3.70,K,A*30
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 129.320000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 2.000000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 3.700000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133835.198,4618.7620,N,00606.8092,E,1,7,1.96,490.4,M,48.2,M,,*56
+==================
+Essential Fix Data
+==================
+time: 13:38:35 UTC
+latitude: 4618.762000
+GPS northOrSouth: N
+longitude: 606.809200
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 7
+horizontal dilution: 1.960000
+altitude: 490.400000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,07,13,09,05,,,,,,,,,2.14,1.96,0.87,1*0E
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 7
+prns[1]: 13
+prns[2]: 9
+prns[3]: 5
+pdop: 2.140000
+horizontal dilution: 1.960000
+vertical dilution: 0.870000
+
+$GNGSA,A,3,74,72,81,,,,,,,,,,2.14,1.96,0.87,2*0B
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 74
+prns[1]: 72
+prns[2]: 81
+pdop: 2.140000
+horizontal dilution: 1.960000
+vertical dilution: 0.870000
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,34,07,55,058,23,13,29,277,30,0*6E
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 34
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[2].srn: 23
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 30
+
+$GPGSV,3,2,09,09,24,089,23,02,22,234,24,28,20,149,,06,04,197,,0*6A
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 23
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 24
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+
+$GPGSV,3,3,09,46,,,,0*6E
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 46
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,,74,54,048,23,72,49,107,20,1*7D
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 23
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 20
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,23,73,09,029,,1*7E
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[2].srn: 23
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GNGLL,4618.7620,N,00606.8092,E,133835.198,A,A*43
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.762000
+GPS North or South: N
+longitude: 606.809200
+nmeaInterpret: GPS East or West: E
+time: 13:38:35 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,133837.000,A,4618.7518,N,00606.8088,E,1.80,119.13,141218,,,A,V*02
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:37 UTC
+status: active (A) or void (V):  A
+latitude: 4618.751800
+GPS northOrSouth: N
+longitude: 606.808800
+GPS eastOrWest: E
+speedOverGround: 1.800000
+trackAngle: 119.130000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,119.13,T,,M,1.80,N,3.34,K,A*3B
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 119.130000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 1.800000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 3.340000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133837.000,4618.7518,N,00606.8088,E,1,9,0.97,486.4,M,48.2,M,,*5E
+==================
+Essential Fix Data
+==================
+time: 13:38:37 UTC
+latitude: 4618.751800
+GPS northOrSouth: N
+longitude: 606.808800
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 9
+horizontal dilution: 0.970000
+altitude: 486.400000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,13,02,28,06,05,,,,,,,,1.28,0.97,0.84,1*01
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 2
+prns[2]: 28
+prns[3]: 6
+prns[4]: 5
+pdop: 1.280000
+horizontal dilution: 0.970000
+vertical dilution: 0.840000
+
+$GNGSA,A,3,74,72,81,75,,,,,,,,,1.28,0.97,0.84,2*06
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 74
+prns[1]: 72
+prns[2]: 81
+prns[3]: 75
+pdop: 1.280000
+horizontal dilution: 0.970000
+vertical dilution: 0.840000
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,33,07,55,058,22,13,29,277,30,0*68
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 33
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[2].srn: 22
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 30
+
+$GPGSV,3,2,09,09,24,089,21,02,22,234,25,28,20,149,19,06,04,197,17,0*67
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 21
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 25
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[2].srn: 19
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+satellite specs[3].srn: 17
+
+$GPGSV,3,3,09,47,,,,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 47
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,21,74,54,048,24,72,49,107,21,1*78
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[1].srn: 21
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 24
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 21
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,23,73,09,029,,1*7E
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[2].srn: 23
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GNGLL,4618.7518,N,00606.8088,E,133837.000,A,A*42
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.751800
+GPS North or South: N
+longitude: 606.808800
+nmeaInterpret: GPS East or West: E
+time: 13:38:37 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,133838.000,A,4618.7508,N,00606.8089,E,1.35,120.94,141218,,,A,V*06
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:38 UTC
+status: active (A) or void (V):  A
+latitude: 4618.750800
+GPS northOrSouth: N
+longitude: 606.808900
+GPS eastOrWest: E
+speedOverGround: 1.350000
+trackAngle: 120.940000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,120.94,T,,M,1.35,N,2.49,K,A*3B
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 120.940000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 1.350000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 2.490000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133838.000,4618.7508,N,00606.8089,E,1,8,1.06,484.9,M,48.2,M,,*56
+==================
+Essential Fix Data
+==================
+time: 13:38:38 UTC
+latitude: 4618.750800
+GPS northOrSouth: N
+longitude: 606.808900
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 8
+horizontal dilution: 1.060000
+altitude: 484.900000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,13,02,28,05,,,,,,,,,1.37,1.06,0.86,1*02
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 2
+prns[2]: 28
+prns[3]: 5
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GNGSA,A,3,74,72,81,75,,,,,,,,,1.37,1.06,0.86,2*03
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 74
+prns[1]: 72
+prns[2]: 81
+prns[3]: 75
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,32,07,55,058,23,13,29,277,31,0*69
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 32
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[2].srn: 23
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 31
+
+$GPGSV,3,2,09,09,24,089,22,02,22,234,24,28,20,149,19,06,04,197,18,0*6A
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 22
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 24
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[2].srn: 19
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+satellite specs[3].srn: 18
+
+$GPGSV,3,3,09,47,,,,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 47
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,20,74,54,048,25,72,49,107,23,1*7A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[1].srn: 20
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 25
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 23
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,24,73,09,029,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[2].srn: 24
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GNGLL,4618.7508,N,00606.8089,E,133838.000,A,A*4D
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.750800
+GPS North or South: N
+longitude: 606.808900
+nmeaInterpret: GPS East or West: E
+time: 13:38:38 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,133839.000,A,4618.7499,N,00606.8093,E,1.13,119.03,141218,,,A,V*05
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:39 UTC
+status: active (A) or void (V):  A
+latitude: 4618.749900
+GPS northOrSouth: N
+longitude: 606.809300
+GPS eastOrWest: E
+speedOverGround: 1.130000
+trackAngle: 119.030000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,119.03,T,,M,1.13,N,2.10,K,A*37
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 119.030000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 1.130000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 2.100000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133839.000,4618.7499,N,00606.8093,E,1,8,1.06,483.4,M,48.2,M,,*5F
+==================
+Essential Fix Data
+==================
+time: 13:38:39 UTC
+latitude: 4618.749900
+GPS northOrSouth: N
+longitude: 606.809300
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 8
+horizontal dilution: 1.060000
+altitude: 483.400000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,13,02,28,05,,,,,,,,,1.37,1.06,0.86,1*02
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 2
+prns[2]: 28
+prns[3]: 5
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GNGSA,A,3,74,72,81,75,,,,,,,,,1.37,1.06,0.86,2*03
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 74
+prns[1]: 72
+prns[2]: 81
+prns[3]: 75
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,33,07,55,058,22,13,29,277,30,0*68
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 33
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[2].srn: 22
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 30
+
+$GPGSV,3,2,09,09,24,089,21,02,22,234,23,28,20,149,20,06,04,197,17,0*6B
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 21
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 23
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[2].srn: 20
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+satellite specs[3].srn: 17
+
+$GPGSV,3,3,09,47,,,,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 47
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,21,74,54,048,21,72,49,107,20,1*7C
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[1].srn: 21
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 21
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 20
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,23,73,09,029,,1*7E
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[2].srn: 23
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GNGLL,4618.7499,N,00606.8093,E,133839.000,A,A*4E
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.749900
+GPS North or South: N
+longitude: 606.809300
+nmeaInterpret: GPS East or West: E
+time: 13:38:39 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,133840.000,A,4618.7498,N,00606.8091,E,0.64,108.23,141218,,,A,V*0B
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:40 UTC
+status: active (A) or void (V):  A
+latitude: 4618.749800
+GPS northOrSouth: N
+longitude: 606.809100
+GPS eastOrWest: E
+speedOverGround: 0.640000
+trackAngle: 108.230000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,108.23,T,,M,0.64,N,1.18,K,A*3F
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 108.230000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.640000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 1.180000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133840.000,4618.7498,N,00606.8091,E,1,8,1.06,482.3,M,48.2,M,,*54
+==================
+Essential Fix Data
+==================
+time: 13:38:40 UTC
+latitude: 4618.749800
+GPS northOrSouth: N
+longitude: 606.809100
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 8
+horizontal dilution: 1.060000
+altitude: 482.300000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,13,02,28,05,,,,,,,,,1.37,1.06,0.86,1*02
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 2
+prns[2]: 28
+prns[3]: 5
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GNGSA,A,3,74,72,81,75,,,,,,,,,1.37,1.06,0.86,2*03
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 74
+prns[1]: 72
+prns[2]: 81
+prns[3]: 75
+pdop: 1.370000
+horizontal dilution: 1.060000
+vertical dilution: 0.860000
+
+$GPGSV,3,1,09,30,80,151,,05,60,292,33,07,55,058,22,13,29,277,30,0*68
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 80
+satellite specs[0].azimuth: 151
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 60
+satellite specs[1].azimuth: 292
+satellite specs[1].srn: 33
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 55
+satellite specs[2].azimuth: 58
+satellite specs[2].srn: 22
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 29
+satellite specs[3].azimuth: 277
+satellite specs[3].srn: 30
+
+$GPGSV,3,2,09,09,24,089,21,02,22,234,23,28,20,149,19,06,04,197,17,0*61
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 9
+satellite count: 4
+satellite specs[0].prn: 9
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 89
+satellite specs[0].srn: 21
+satellite specs[1].prn: 2
+satellite specs[1].elevation: 22
+satellite specs[1].azimuth: 234
+satellite specs[1].srn: 23
+satellite specs[2].prn: 28
+satellite specs[2].elevation: 20
+satellite specs[2].azimuth: 149
+satellite specs[2].srn: 19
+satellite specs[3].prn: 6
+satellite specs[3].elevation: 4
+satellite specs[3].azimuth: 197
+satellite specs[3].srn: 17
+
+$GPGSV,3,3,09,47,,,,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 9
+satellite count: 1
+satellite specs[0].prn: 47
+
+$GLGSV,3,1,11,65,72,351,,75,57,173,22,74,54,048,22,72,49,107,21,1*7D
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 3
+sequence number: 1
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 72
+satellite specs[0].azimuth: 351
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 57
+satellite specs[1].azimuth: 173
+satellite specs[1].srn: 22
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 54
+satellite specs[2].azimuth: 48
+satellite specs[2].srn: 22
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 49
+satellite specs[3].azimuth: 107
+satellite specs[3].srn: 21
+
+$GLGSV,3,2,11,66,15,310,,76,15,197,,81,14,303,23,73,09,029,,1*7E
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 3
+sequence number: 2
+no of satellites in view: 11
+satellite count: 4
+satellite specs[0].prn: 66
+satellite specs[0].elevation: 15
+satellite specs[0].azimuth: 310
+satellite specs[1].prn: 76
+satellite specs[1].elevation: 15
+satellite specs[1].azimuth: 197
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 14
+satellite specs[2].azimuth: 303
+satellite specs[2].srn: 23
+satellite specs[3].prn: 73
+satellite specs[3].elevation: 9
+satellite specs[3].azimuth: 29
+
+$GLGSV,3,3,11,82,09,350,,88,03,259,,71,02,121,,1*46
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 3
+sequence number: 3
+no of satellites in view: 11
+satellite count: 3
+satellite specs[0].prn: 82
+satellite specs[0].elevation: 9
+satellite specs[0].azimuth: 350
+satellite specs[1].prn: 88
+satellite specs[1].elevation: 3
+satellite specs[1].azimuth: 259
+satellite specs[2].prn: 71
+satellite specs[2].elevation: 2
+satellite specs[2].azimuth: 121
+
+$GNGLL,4618.7498,N,00606.8091,E,133840.000,A,A*43
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.749800
+GPS North or South: N
+longitude: 606.809100
+nmeaInterpret: GPS East or West: E
+time: 13:38:40 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,133841.000,A,4618.7499,N,00606.8087,E,0.52,108.23,141218,,,A,V*09
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:38:41 UTC
+status: active (A) or void (V):  A
+latitude: 4618.749900
+GPS northOrSouth: N
+longitude: 606.808700
+GPS eastOrWest: E
+speedOverGround: 0.520000
+trackAngle: 108.230000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,108.23,T,,M,0.52,N,0.96,K,A*3D
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 108.230000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.520000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.960000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,133841.000,4618.7499,N,00606.8087,E,1,9,1.06,481.4,M,48.2,M,,*56
+==================
+Essential Fix Data
+==================
+time: 13:38:41 UTC
+latitude: 4618.749900
+GPS northOrSouth: N
+longitude: 606.808700
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 9
+horizontal dilution: 1.060000
+altitude: 481.400000
+unit of altitude: M
+height of geoide: 48.200000
+units for height of Geodide M
+
+$GNGSA,A,3,13,02,28,30,05,,,,,,,,1.35,1.06,0.83,1*06
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+Rak5205 GPS demo program
+The Quectel L76 GPS receiver is connected to Rak811 UART 3
+Reads the GPS receiver and parses the NMEA messages
+The GPS timing pulse is connected to Rak811 GPIO PA0
+Stack pointer is at 20007ff0
+fifo buffer allocated at 0x200008a0
+nmea message buffer allocated at 0x20000ca8
+Switching GPS Standby off
+
+$PMTK011,MTKGPS*08
+
+$PMTK010,001*2E
+
+$PMTK011,MTKGPS*08
+
+$PMTK010,002*2D
+
+$GPRMC,134842.145,V,,,,,0.00,0.00,141218,,,N,V*30
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:42 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.000000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.00,N,0.00,K,N*32
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.000000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.000000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134842.145,,,,,0,0,,,M,,M,,*40
+==================
+Essential Fix Data
+==================
+time: 13:48:42 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,,05,63,285,,07,51,057,,13,33,280,,0*6D
+=========================
+GPGSV: satellites in view
+=========================
+No of GSV structures is 2
+Memory for the GSV records successfully allocated
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,,0*56
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,,81,11,298,,82,10,345,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+ 0x0dte: next char should be ',' or '*' but is 
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134842.145,V,N*72
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:42 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GPRMC,134843.145,V,,,,,0.06,0.00,141218,,,N,V*37
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:43 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.060000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.06,N,0.11,K,N*34
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.060000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.110000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134843.145,,,,,0,0,,,M,,M,,*41
+==================
+Essential Fix Data
+==================
+time: 13:48:43 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,,05,63,285,,07,51,057,,13,33,280,34,0*6A
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 34
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,,0*56
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,,81,11,298,,82,10,345,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+ 0x0dte: next char should be ',' or '*' but is 
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134843.145,V,N*73
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:43 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GPRMC,134844.145,V,,,,,0.53,0.00,141218,,,N,V*30
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:44 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.530000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.53,N,0.98,K,N*35
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.530000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.980000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134844.145,,,,,0,0,,,M,,M,,*46
+==================
+Essential Fix Data
+==================
+time: 13:48:44 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,,05,63,285,,07,51,057,20,13,33,280,34,0*68
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[2].srn: 20
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 34
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,34,0*51
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+satellite specs[2].srn: 34
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,,81,11,298,,82,10,345,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+ 0x0dte: next char should be ',' or '*' but is 
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134844.145,V,N*74
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:44 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GPRMC,134845.145,V,,,,,0.17,0.00,141218,,,N,V*31
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:45 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.170000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.17,N,0.31,K,N*36
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.170000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.310000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134845.145,,,,,0,0,,,M,,M,,*47
+==================
+Essential Fix Data
+==================
+time: 13:48:45 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,,05,63,285,,07,51,057,20,13,33,280,33,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[2].srn: 20
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 33
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,31,0*54
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+satellite specs[2].srn: 31
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,,81,11,298,,82,10,345,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+ 0x0dte: next char should be ',' or '*' but is 
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134845.145,V,N*75
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:45 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GPRMC,134846.145,V,,,,,0.20,0.00,141218,,,N,V*36
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:46 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.200000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.20,N,0.38,K,N*3B
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.200000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.380000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134846.145,,,,,0,0,,,M,,M,,*44
+==================
+Essential Fix Data
+==================
+time: 13:48:46 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,20,05,63,285,,07,51,057,23,13,33,280,33,0*6E
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[0].srn: 20
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[2].srn: 23
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 33
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,33,0*56
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+satellite specs[2].srn: 33
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,,81,11,298,,82,10,345,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+ 0x0dte: next char should be ',' or '*' but is 
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134846.145,V,N*76
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:46 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GPRMC,134847.145,V,,,,,0.26,0.00,141218,,,N,V*31
+==========================
+GPRMC: Recommended Minimum
+==========================
+time: 13:48:47 UTC
+status: active (A) or void (V):  V
+speedOverGround: 0.260000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: No fix
+
+$GPVTG,0.00,T,,M,0.26,N,0.47,K,N*35
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.260000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.470000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134847.145,,,,,0,0,,,M,,M,,*45
+==================
+Essential Fix Data
+==================
+time: 13:48:47 UTC
+fix quality: 0
+no of satellites seen: 0
+unit of altitude: M
+units for height of GeoID: M
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,1*03
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSA,A,1,,,,,,,,,,,,,,,,2*00
+=============================
+GPGSA: Overall Satellite data
+=============================
+manual/auto: A
+
+$GPGSV,2,1,07,30,82,120,20,05,63,285,,07,51,057,22,13,33,280,33,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[0].srn: 20
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 57
+satellite specs[2].srn: 22
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 33
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,34,0*51
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+satellite specs[2].srn: 34
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,26,81,11,298,,82,10,345,,1*7D
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[1].srn: 26
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+getByte: next char should be ',' or '*' but is D 0x44
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GPGLL,,,,,134847.145,V,N*77
+========================================
+GPGLL: geographic latitude and longitude
+========================================
+time: 13:48:47 UTC
+status: active (A) or void (V): V
+positioning mode: No fix
+
+$GNRMC,134848.141,A,4618.7477,N,00606.8107,E,0.28,0.00,141218,,,A,V*0F
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:48:48 UTC
+status: active (A) or void (V):  A
+latitude: 4618.747700
+GPS northOrSouth: N
+longitude: 606.810700
+GPS eastOrWest: E
+speedOverGround: 0.280000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,0.00,T,,M,0.28,N,0.52,K,A*30
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.280000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.520000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134848.141,4618.7477,N,00606.8107,E,1,4,1.84,476.8,M,48.2,M,,*56
+==================
+Essential Fix Data
+==================
+time: 13:48:48 UTC
+latitude: 4618.747700
+GPS northOrSouth: N
+longitude: 606.810700
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 4
+horizontal dilution: 1.840000
+altitude: 476.800000
+unit of altitude: M
+height of GeoID: 48.200000
+units for height of GeoID: M
+
+$GNGSA,A,3,13,30,02,,,,,,,,,,2.08,1.84,0.97,1*0B
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 30
+prns[2]: 2
+pdop: 2.080000
+horizontal dilution: 1.840000
+vertical dilution: 0.970000
+
+$GNGSA,A,3,66,,,,,,,,,,,,2.08,1.84,0.97,2*0B
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 66
+pdop: 2.080000
+horizontal dilution: 1.840000
+vertical dilution: 0.970000
+
+$GPGSV,2,1,07,30,82,120,22,05,63,285,,07,51,056,21,13,33,280,33,0*6F
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 7
+satellite specs[0].prn: 30
+satellite specs[0].elevation: 82
+satellite specs[0].azimuth: 120
+satellite specs[0].srn: 22
+satellite specs[1].prn: 5
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 285
+satellite specs[2].prn: 7
+satellite specs[2].elevation: 51
+satellite specs[2].azimuth: 56
+satellite specs[2].srn: 21
+satellite specs[3].prn: 13
+satellite specs[3].elevation: 33
+satellite specs[3].azimuth: 280
+satellite specs[3].srn: 33
+
+$GPGSV,2,2,07,28,24,146,,09,20,092,,02,18,231,34,0*51
+=========================
+GPGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 7
+satellite specs[0].prn: 28
+satellite specs[0].elevation: 24
+satellite specs[0].azimuth: 146
+satellite specs[1].prn: 9
+satellite specs[1].elevation: 20
+satellite specs[1].azimuth: 92
+satellite specs[2].prn: 2
+satellite specs[2].elevation: 18
+satellite specs[2].azimuth: 231
+satellite specs[2].srn: 34
+
+$GLGSV,3,1,09,65,77,006,,75,63,171,,74,49,043,,72,44,113,,1*79
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 1
+no of sentences: 2
+sequence number: 1
+no of satellites in view: 9
+satellite specs[0].prn: 65
+satellite specs[0].elevation: 77
+satellite specs[0].azimuth: 6
+satellite specs[1].prn: 75
+satellite specs[1].elevation: 63
+satellite specs[1].azimuth: 171
+satellite specs[2].prn: 74
+satellite specs[2].elevation: 49
+satellite specs[2].azimuth: 43
+satellite specs[3].prn: 72
+satellite specs[3].elevation: 44
+satellite specs[3].azimuth: 113
+
+$GLGSV,3,2,09,76,20,198,,66,19,313,24,81,11,298,,82,10,345,,1*7F
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 2
+no of sentences: 2
+sequence number: 2
+no of satellites in view: 9
+satellite specs[0].prn: 76
+satellite specs[0].elevation: 20
+satellite specs[0].azimuth: 198
+satellite specs[1].prn: 66
+satellite specs[1].elevation: 19
+satellite specs[1].azimuth: 313
+satellite specs[1].srn: 24
+satellite specs[2].prn: 81
+satellite specs[2].elevation: 11
+satellite specs[2].azimuth: 298
+satellite specs[3].prn: 82
+satellite specs[3].elevation: 10
+satellite specs[3].azimuth: 345
+satellite specs[4].prn: 1
+getByte: next char should be ',' or '*' but is F 0x46
+Cannot get elevation for satellite specs
+
+$GLGSV,3,3,09,73,04,029,,1*4A
+=========================
+GLGSV: satellites in view
+=========================
+gsv sequence number is 3
+no of sentences: 2
+sequence number: 3
+no of satellites in view: 9
+satellite specs[0].prn: 73
+satellite specs[0].elevation: 4
+satellite specs[0].azimuth: 29
+
+$GNGLL,4618.7477,N,00606.8107,E,134848.141,A,A*47
+========================================
+GNGLL: geographic latitude and longitude
+========================================
+latitude: 4618.747700
+GPS North or South: N
+longitude: 606.810700
+nmeaInterpret: GPS East or West: E
+time: 13:48:48 UTC
+status: active (A) or void (V): A
+positioning mode: Autonomous GNSS Fix
+
+$GNRMC,134849.142,A,4618.7480,N,00606.8097,E,0.27,0.00,141218,,,A,V*02
+==========================
+GNRMC: Recommended Minimum
+==========================
+time: 13:48:49 UTC
+status: active (A) or void (V):  A
+latitude: 4618.748000
+GPS northOrSouth: N
+longitude: 606.809700
+GPS eastOrWest: E
+speedOverGround: 0.270000
+trackAngle: 0.000000
+date:14.12 2018
+positioning mode: Autonomous GNSS Fix
+
+$GPVTG,0.00,T,,M,0.27,N,0.51,K,A*3C
+=========================
+GPVTG: Velocity made good
+=========================
+nmeaInterpret: trueTrack: 0.000000
+nmeaInterpret: true track character: T
+nmeaInterpret: magnetic track character: M
+nmeaInterpret: speed in knots: 0.270000
+nmeaInterpret: speed in knots character: N
+nmeaInterpret: speed in km/h: 0.510000
+nmeaInterpret: speed in km/h character: K
+
+$GPGGA,134849.142,4618.7480,N,00606.8097,E,1,4,1.84,476.9,M,48.2,M,,*55
+==================
+Essential Fix Data
+==================
+time: 13:48:49 UTC
+latitude: 4618.748000
+GPS northOrSouth: N
+longitude: 606.809700
+GPS eastOrWest: E
+fix quality: 1
+no of satellites seen: 4
+horizontal dilution: 1.840000
+altitude: 476.900000
+unit of altitude: M
+height of GeoID: 48.200000
+units for height of GeoID: M
+
+$GNGSA,A,3,13,30,02,,,,,,,,,,2.08,1.84,0.97,1*0B
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 13
+prns[1]: 30
+prns[2]: 2
+pdop: 2.080000
+horizontal dilution: 1.840000
+vertical dilution: 0.970000
+
+$GNGSA,A,3,66,,,,,,,,,,,,2.08,1.84,0.97,2*0B
+=============================
+GNGSA: Overall Satellite data
+=============================
+manual/auto: A
+prns[0]: 66
+pdop: 2.080000
+horizontal dilution: 1.840000
+vertical dilution: 0.970000
