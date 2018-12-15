@@ -11,6 +11,8 @@ This program also uses the LEDs on the WisTrio board but here the blinking frequ
 Each STM32L151CB-A processor has a unique identifier which is used as device EUI when registering the device with The Things Network (TTN). RAK5205BoardID reads the ID registers and constructs the device EUI as needed by TTN. The ID is printed to the serial port where it can be picked up with a serial terminal emulator like minicom or gtkterm.
 ## GPS (RAK5205GPS)
 The Rak5205 WisTrio uses Quectel L76 GNSS module as a GPS receiver. This module is interfaced to the Rak811 processor through its UART3. Quectel L76 sends GPS information in form of NMEA sentences. The program reads and prints these sentences which are in ASCII format. It then interprets each of the sentences and saves the results in dedicated data structures.
+## GPS with Parser (RAK5205_GPSParse)
+The program is based on RAK5205GPS and reads out the Quectel L76 module the same way. However, this program copies each NMEA sentence into a line buffer and parses it, filling C structures. you can switch on "debugging" in which case the parsed information is printed in a humanly readable format,
 ## I2C Scanner (RAK5025_I2CScanner)
 The Wis-Trio Rak5205 has a MEMS digital motion sensor and a BME608 barometric presssure sensor on board. These chips are interfaced to the Rak811 chip through I2C. In order to scan the I2C bus for I2C slaves connected I wrote a simple I2C scanner. These program tries to acces an I2C slave on each of the possible I2C addresses and print the address on which it gets an answer.
 ## The LIS3-DH MEMS motion scanner (Rak5205Lis3d)
